@@ -11,6 +11,45 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <h1> Registrazione Esami Triennale e Magistrale </h1>
+        
+        <img src="/home/studente/Scrivania"
+             title="Unica Logo" alt="Unica Logo"
+             with="150" height="150">
+        
+        <form method="GET">
+            <!-- Nome, Cognome e Matricola Studente -->
+            <div>
+                <label for="NomeStudente">Nome Studente</label>
+                <input type="text" name="NomeStudente" id="NomeStudente" />
+                <label for="CognomeStudente">Cognome Studente</label>
+                <input type="text" name="CognomeStudente" id="CognomeStudente" />
+                <label for="Matriola">Matricola Studente</label>
+                <input type="number" name="MatricolaStudente" id="MatricolaStudente" />
+            </div>
+            
+            <!-- Lista esami e voto -->
+            <label for="ListaEsami">Lista Esami</label>
+            <select>
+                <option value="PR1">Programmazione 1</option>
+                <option value="PR2">Programmazione 2</option>
+                <option value="AMM">Amministrazione di Sistema</option>
+                <option value="EAT">Elaborazione di Immagini</option>
+                <option value="FS">Fondamenti di Sistema</option>
+                <option value="ARE2">Are 2</option>
+            </select>
+            
+            <label for="voto">Voto</label>
+            <input type="range" min="18" max="31" name="voto" id="voto">
+            <!-- Descrizione -->
+            <label for="Descrizione">Descrizione</label>
+            <textarea name="Descrizione" id="Descrizione"
+                      cols="40" rows="5" />Descrizione Esame</textarea>            
+            <!-- Pulsanti Submit e Reset -->
+            <div>
+                <input type="submit" value="invia">
+                <input type="reset" vaulue="cancella">
+            </div>
+        </form>
     </body>
 </html>
