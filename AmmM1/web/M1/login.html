@@ -6,11 +6,33 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>FootballShop - Log in</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Log in a FootballShop. Compra divise e gadget della tua squadra preferita di Serie A a prezzi bassissimi!" >
+	<meta name="author" content="Riccardo Casu">
+        <meta name="keywords" content="Football, calcio, compra, ,vendi, maglie, divise, gadget, Serie A, login">
     </head>
-    <body>
-        <div>TODO write content</div>
+    <body>        
+        <h1>Log in</h1>
+        <!--Form per il log in-->
+        <form method="get">
+            <div>
+                <label for="user">Username</label>
+                <input type="text" name="user" id="user"/>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password"/>            
+                <input type="submit" value="Accedi"/> 
+                <input type='reset' value='Cancella'/>
+            </div>
+        </form>
+        <!--Sezione di navigazione che permette di raggiungere le pagine descrizione, cliente e venditore-->
+        <nav>
+            <ul>
+                <li><a href='descrizione.html'>Chi siamo</a></li>
+                <li><a href='cliente.html'>Cliente</a></li>
+                <li><a href='venditore.html'>Venditore</a></li>                
+            </ul>
+        </nav>
     </body>
 </html>
