@@ -8,3 +8,32 @@ and open the template in the editor.
     Author     : Riccardo
 */
 
+body{
+    background: #E2E2E2;
+    font-family: "Arial", Helvetica, sans-serif;
+    color: #0D2956;
+    text-align: justify;
+}
+
+h1{
+    background-color: #0D2956;
+    border-bottom: 1px;
+    color: #E2E2E2;
+    font-size: 48px;
+}
+h2{
+    color: #0D2956;
+    font-size: 36px;
+}
+h3{
+    color: #0D2956;
+    font-size: 24px;
+}
+
+a:visited, a:link{
+    color: #0D2956;
+    text-decoration: none;
+}
+a:hover{
+    font-weight: bold
+}
