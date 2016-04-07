@@ -37,3 +37,15 @@ a:visited, a:link{
 a:hover{
     font-weight: bold
 }
+
+ul {
+list-style-type: none;
+padding: 0px;
+margin: 0px;
+}
+ul li {
+background-image: url(pallone_serieA.png);
+background-repeat: no-repeat;
+background-position: 0px 5px;
+padding-left: 14px;
+}
