@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : Riccardo
 */
 
-//Colore di sfondo, font e colore del test
+/*Colore di sfondo, font e colore del testo*/
 body{
     background: #E2E2E2;
     font-family: "Arial", Helvetica, sans-serif;
@@ -16,7 +16,7 @@ body{
     text-align: justify;
 }
 
-//Proprietà dei titoli h1, h2, h3
+/*Proprietà dei titoli h1, h2, h3*/
 h1{
     background-color: #0D2956;
     border-bottom: 1px;
@@ -32,7 +32,7 @@ h3{
     font-size: 24px;
 }
 
-//Proprietà dei link
+/*Proprietà dei link*/
 a:visited, a:link{
     color: #0D2956;
     text-decoration: none;
@@ -41,7 +41,7 @@ a:hover{
     font-weight: bold
 }
 
-//Liste
+/*Proprietà delle liste*/
 ul {
 list-style-type: none;
 padding: 0px;
