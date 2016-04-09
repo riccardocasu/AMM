@@ -8,51 +8,36 @@ and open the template in the editor.
     Author     : Riccardo
 */
 
-/*Colore di sfondo, font e colore del testo*/
-body{
-    background: #E2E2E2;
-    font-family: "Arial", Helvetica, sans-serif;
-    color: #0D2956;
+/*Colore di sfondo e caratteristiche font*/
+body {
+    background-color: #e4e4e4;
+    font: 13px/20px "Open Sans", Arial, sans-serif;
     text-align: justify;
 }
 
-/*Proprietà dei titoli h1, h2, h3*/
-h1{
-    background-color: #0D2956;
-    border-bottom: 1px;
-    color: #E2E2E2;
-    font-size: 48px;
-}
-h2{
-    color: #0D2956;
-    font-size: 36px;
-}
-h3{
-    color: #0D2956;
-    font-size: 24px;
-}
-
 /*Proprietà dei link*/
-a:visited, a:link{
-    color: #0D2956;
+a:visited {
     text-decoration: none;
+    color: #1C345A;
+}
+a:link {
+    text-decoration: none;
+    color: #1C345A;
 }
 a:hover{
+    text-decoration: none;
     font-weight: bold;
 }
-
-/*Proprietà delle liste*/
-ul {
-list-style-type: none;
-padding: 0px;
-margin: 0px;
-}
-ul li {
-background-image: url(images/pallone_serieA.png);
-background-repeat: no-repeat;
-background-position: 0px 5px;
-padding-left: 50px;
-padding-top: 20px;
+/*Proprietà delle immagini con link*/
+a:link img{
+    opacity:.50;
+    -moz-opacity:.50;
+    filter: alpha(opacity=50);
+    }
+a:hover img{
+    opacity:.99;
+    -moz-opacity:.99;
+    filter: alpha(opacity=50);
 }
 
 /*Proprietà delle tabelle*/
@@ -73,9 +58,247 @@ table th{
     color: #FFFFFF;
     font-weight: bold; 
 }
+/*Colori alternati righe pari e dispari*/
 tr.pari{
-    background: #000000;
+    background: #C0C0C0;
 }
 tr.dispari{
-    background: #FFFFFF;
+    background: #F4F4F4;
+}
+
+/*Colore di sfondo e dimensione minima della pagina*/
+#page {
+    background-color: white;
+    min-width: 400px;
+}
+/*Colori dell'header e del footer*/
+#header, #footer{
+    background-color: #1c345a;
+    color: white;
+    border-bottom: 10px solid #9e1616;
+}
+/*Colore degli elenchi di link nel menu*/
+#menu ul li a:link {
+    color: white;
+}
+#menu ul li a:visited {
+    color: white;
+}
+/*Caratteristiche degli elenchi delle barre laterali*/
+#sidebar1 ul, #sidebar2 ul {
+    padding-left: 10px;
+    margin-top: 0px;
+    margin-left: 0px;
+    list-style: none;
+}
+#sidebar1 li, #sidebar2 li {
+    list-style: none;
+}
+/*Caratteristiche delle icone che precedono le scritte*/
+.icon-title {
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    padding-top: 3px;
+    margin-top: 15px;
+}
+/*Caratteristiche dei titoli*/
+h1 {
+    display: block;
+    font-size: 2em;    
+    font-weight: bold;
+}
+h2, h3 {
+    color: #1c345a;
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+/*Caratteristiche dei titoli di livello h3 di content (colonna centrale)*/
+#content h3{
+    background: #1c345a;
+    color: white;
+    padding-left: 3px;
+    }
+/*Caratteristiche del paragrafo del footer*/
+#footer p {
+    position: absolute;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 1000px;
+}
+/*Caratteristiche dei form*/
+form {
+    border-style: solid;
+    border-color: #9E1616;
+    border-radius: 8px;  
+}
+/*Allinemento per i campi dei form*/
+label::after, label::before {
+    content: '\A';
+    white-space: pre;
+}
+.login_form, .venditore_form{
+    margin: auto;
+    width: 60%;
+}
+.pulsante {
+    border: 1px solid #9E1616;;
+    background-color: #1c345a;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+input:focus, textarea:focus{
+    border: 1px solid #9E1616;
+    background-color: #e4e4e4;
+}
+input:not(.pulsante), textarea{
+    width: 100%;
+    border: 1px solid #9E1616;
+    border-radius: 5px;
+}
+input, textarea {
+    margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 1024px){
+/*Proprietà della pagina*/
+    #page {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
+    }
+/*Proprietà della classe social*/
+    .social {
+        width: 100%;
+    }
+    .social ul {
+        display: block;
+        float: right;
+        margin-right: 10px;
+    }
+    .social ul li {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        overflow: hidden;
+    }
+    .social ul li a:link {
+        color: transparent;
+    }
+    #facebook {
+        background-image: url('images/facebook.png');
+        background-repeat: no-repeat;
+    }
+    #twitter {
+        background-image: url('images/twitter.png');
+        background-repeat: no-repeat;
+    }
+    #instagram {
+        background-image: url('images/instagram.png');
+        background-repeat: no-repeat;
+    }
+/*Proprietà dell'header*/
+    #header{
+        height: 100px;
+        position: relative;
+        width: 1000px;
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
+    } 
+    #header {
+        clear: both;
+    }
+    #header{
+        background-image: url(images/header.png);
+    }
+/*Proprietà del footer*/
+    #footer {
+        height: 35px;
+        position: relative;   
+        width: 1000px;    
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
+    }
+/*Proprietà del logo*/
+    #logo {
+        position: absolute;
+        padding-left: 10px;
+    }
+    div#logo h1 {
+        background-image: url('images/logo_serieA.png');
+        background-repeat: no-repeat;
+        background-position: center left;
+        height: 100px;
+        vertical-align: middle;
+        padding-left: 100px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        line-height: 100px;
+        color: #ffffff;
+        display: block;
+    }
+/*Proprietà del menù*/
+    #menu {
+        position: relative;
+        float: right;
+        display: inline-block;
+    }    
+    #menu ul li {
+        position: relative;
+        display: inline-block;
+        color: white;
+        list-style: none;
+    }
+/*Proprietà della prima barra laterale (sinistra)*/
+    #sidebar1 {
+        float: left;
+        width: 20%;
+        padding-left: 5px;
+    }    
+/*Proprietà della seconda barra laterale (destra)*/
+    #sidebar2 {
+        float: right;
+        width: 20%;
+        padding-right: 10px;
+    }    
+    #sidebar2 ul {
+        padding-left: 20px;
+    }    
+/*Proprietà della colonna centrale (contenuto)*/
+    #content {
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-bottom: 10px;
+        padding-left: 10px;
+    }
+/*Proprietà dei titoli con icon*/
+    .icon-title {
+        padding-left: 38px;
+    }    
+    #Chi_siamo {
+        background-image: url('images/chiSiamo.png');
+    }
+    #In_vendita {
+        background-image: url('images/inVendita.png');
+    }    
+    #navigazione h2 {
+        background-image: url('images/pallone_serieA.png');
+    }
+    #altri h2 {
+        background-image: url('images/altri.png');
+    }
+    #sidebar2 h2 {
+        background-image: url('images/contattaci.png');
+    }    
 }

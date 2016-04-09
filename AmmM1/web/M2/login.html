@@ -13,29 +13,100 @@ and open the template in the editor.
         <meta name="description" content="Login a FootballShop. Compra e vendi divise e gadget della tua squadra preferita di Serie A a prezzi bassissimi!" >
 	<meta name="author" content="Riccardo Casu">
         <meta name="keywords" content="Football, calcio, compra, ,vendi, maglie, divise, gadget, Serie A, login">
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
         <link href="style.css" rel="stylesheet" type="text/css" media="screen"/>
     </head>
     <body>
-        <!-- Titolo di livello h1 -->
-        <h1>FootballShop - Login</h1>
-        <!-- Form per il login -->
-        <form method="get">
-            <div>
-                <label for="user">Username</label>
-                <input type="text" name="user" id="user"/>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password"/>            
-                <input type="submit" value="Accedi"/> 
-                <input type='reset' value='Reset'/>
+        <div id="page">
+            <header>        
+                <div id="header">                    
+                    <div id="logo">
+                        <!-- Titolo di livello h1 -->
+                        <h1>FootballShop</h1>
+                    </div>                    
+                    <div class="social">
+                        <!-- Elenco di link ai vari social -->
+                        <ul>
+                            <li id="facebook"><a href="https://www.facebook.com">facebook</a></li>
+                            <li id="twitter"><a href="https://twitter.com/">twitter</a></li>
+                            <li id="instagram"><a href="http://www.instagram.com/">instagram</a></li>
+                        </ul>
+                    </div>                    
+                    <div id="menu">
+                        <!-- Elenco con link alle altre pagine -->
+                        <ul>
+                            <li><a href="descrizione.html">Home</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="cliente.html">Cliente</a></li>
+                            <li><a href="venditore.html">Venditore</a></li>
+                        </ul>
+                    </div> 
+                </div>
+            </header>
+            <!-- Prima barra laterale (sinistra) -->
+            <div id="sidebar1">
+                <ul>
+                    <li id="navigazione">
+                        <h2 class="icon-title">Navigazione</h2>
+                        <!-- Elenco con link alle altre pagine -->
+                        <ul>
+                            <li><a href="descrizione.html">Home</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="cliente.html">Cliente</a></li>
+                            <li><a href="venditore.html">Venditore</a></li>
+                        </ul>
+                    </li>
+                    <li id="altri">
+                        <h2 class="icon-title">Affiliati</h2>
+                        <!-- Elenco con link ad altri siti -->
+                        <ul>
+                            <li><a href="http://www.legaseriea.it/">Lega Serie A</a></li>
+                            <li><a href="http://www.risultati.it/">Risultati Live</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
-        </form>
-        <!-- Sezione di navigazione che permette di raggiungere le pagine descrizione, cliente e venditore -->
-        <nav>
-            <ul>
-                <li><a href='descrizione.html'>Chi siamo</a></li>
-                <li><a href='cliente.html'>Cliente</a></li>
-                <li><a href='venditore.html'>Venditore</a></li>                
-            </ul>
-        </nav>
+            <!-- Seconda barra laterale (destra) -->
+            <div id="sidebar2">
+                <h2 id="contattaci" class="icon-title">Contattaci</h2>
+                <!-- Elenco con i vari contatti -->
+                <ul>
+                    <li>
+                        <strong>Email:</strong> FootballShop@gmail.com
+                    </li>
+                    <li>
+                        <strong>Telefono:</strong> 0708636034
+                    </li>                    
+                </ul>
+            </div>
+            <!-- Colonna centrale -->
+            <div id="content">
+                <h1>FootballShop - Login</h1>
+                <!-- Form per il login -->
+                <form method="get">
+                    <div class="login_form">
+                        <label for="user">Username</label>
+                        <input type="text" name="user" id="user"/>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password"/>            
+                        <div class="Box_pulsanti">
+                            <input class="pulsante" type="submit" value="Accedi"/> 
+                            <input class="pulsante" type='reset' value='Reset'/>
+                        </div>
+                    </div>
+                </form>                
+            </div>
+            <!-- Blocco vuoto ("clear") -->
+            <div style="clear: both; width: 0px; height: 0px;"></div>
+            
+            <footer>
+                <div id="footer">
+                    <!-- Paragrafo del footer -->
+                    <p>
+                        Author: Riccardo Casu
+                    </p>
+                </div>                
+            </footer>
+        </div>
     </body>
 </html>

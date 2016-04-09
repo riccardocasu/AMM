@@ -13,92 +13,165 @@ and open the template in the editor.
         <meta name="description" content="Compra e vendi divise e gadget della tua squadra preferita di Serie A a prezzi bassissimi!">
         <meta name="author" content="Riccardo Casu">
         <meta name="keywords" content="Football, calcio, compra, maglie, divise, gadget, Serie A">
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
         <link href="style.css" rel="stylesheet" type="text/css" media="screen"/>
     </head>
     <body>
-    <!-- Sezione di navigazione che permette di raggiungere le pagine login e descrizione -->
-        <nav>
-            <a href="login.html">Login</a>        
-            <a href="descrizione.html">Chi Siamo</a>
-        </nav>         
-        <!-- Titolo di livello h1 -->
-        <h1 id="titolo">FootballShop - Area Clienti</h1>
-        <!-- Inizio tabella -->
-        <table> 
-            <!-- Intestazione tabella -->
-            <tr>
-                <th>Nome</th>
-                <th>Foto</th>
-                <th>Disponibili</th>
-                <th>Prezzo</th>
-                <th>Compra</th>
-            </tr>
-            <!-- Primo oggetto -->
-            <tr class="dispari">
-            <td>Maglia Juventus</td>
-                <td>
-                    <img src="images/juve.jpg" title="Maglia Juventus" 
-                         alt="Foto maglia Juve" width="200" height="200">
-                </td>
-                <td>30</td>
-                <td>45.00 €</td>
-                <td><a href="cliente.html">Aggiungi al carrello</a></td> 
-            </tr>
-            <!-- Secondo oggetto -->
-            <tr class="pari"> 
-                <td>Maglia Roma</td>
-                <td>
-                    <img src="images/roma.jpg" title="Maglia Roma" 
-                         alt="Foto maglia Roma" width="200" height="200">
-                </td>
-                <td>52</td>
-                <td>45.00 €</td>
-                <td><a href="cliente.html">Aggiungi al carrello</a></td> 
-            </tr>
-            <!-- Terzo oggetto -->
-            <tr class="dispari">
-                <td>Maglia Inter</td>
-                <td> 
-                    <img src="images/inter.jpg" title="Maglia Inter" 
-                         alt="Foto maglia Inter" width="200" height="200">
-                </td>
-                <td>48</td>
-                <td>45.00 €</td>
-                <td><a href="cliente.html">Aggiungi al carrello</a></td>
-            </tr>
-            <!-- Quarto oggetto -->
-            <tr class="pari">
-                <td>Maglia Milan (Trasferta)</td>
-                <td>
-                    <img src="images/milan2.jpg" title="Maglia Milan Trasferta" 
-                         alt="Foto maglia Milan trasferta" width="200" height="200">
-                </td>
-                <td>78</td>
-                <td>40.00 €</td>
-                <td><a href="cliente.html">Aggiungi al carrello</a></td> 
-            </tr>
-            <!-- Quinto oggetto -->
-            <tr class="dispari">
-                <td>Pallone Napoli</td>
-                <td>
-                    <img src="images/napoli_pallone.jpg" title="Pallone Napoli" 
-                         alt="Foto pallone Napoli" width="200" height="200">
-                </td>
-                <td>90</td>
-                <td>10.50 €</td>
-                <td><a href="cliente.html">Aggiungi al carrello</a></td> 
-            </tr>
-            <!-- Sesto oggetto -->
-            <tr class="pari">
-                <td>Cover Fiorentina</td>
-                <td>
-                    <img src="images/fiorentina_cover.jpg" title="Cover Fiorentina" 
-                         alt="Foto cover Fiorentina" width="200" height="200">
-                </td>
-                <td>94</td>
-                <td>6.00 €</td>
-                <td><a href="cliente.html">Aggiungi al carrello</a></td> 
-            </tr>
-        </table>        
+        <div id="page">
+            <header>        
+                <div id="header">                    
+                    <div id="logo">
+                        <!-- Titolo di livello h1 -->
+                        <h1>FootballShop</h1>
+                    </div>                    
+                    <div class="social">
+                        <!-- Elenco di link ai vari social -->
+                        <ul>
+                            <li id="facebook"><a href="https://www.facebook.com">facebook</a></li>
+                            <li id="twitter"><a href="https://twitter.com/">twitter</a></li>
+                            <li id="instagram"><a href="http://www.instagram.com/">instagram</a></li>
+                        </ul>
+                    </div>                    
+                    <div id="menu">
+                        <!-- Elenco con link alle altre pagine -->
+                        <ul>
+                            <li><a href="descrizione.html">Home</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="cliente.html">Cliente</a></li>
+                            <li><a href="venditore.html">Venditore</a></li>
+                        </ul>
+                    </div> 
+                </div>
+            </header>
+            <!-- Prima barra laterale (sinistra) -->
+            <div id="sidebar1">
+                <ul>
+                    <li id="navigazione">
+                        <h2 class="icon-title">Navigazione</h2>
+                        <!-- Elenco con link alle altre pagine -->
+                        <ul>
+                            <li><a href="descrizione.html">Home</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="cliente.html">Cliente</a></li>
+                            <li><a href="venditore.html">Venditore</a></li>
+                        </ul>
+                    </li>
+                    <li id="altri">
+                        <!-- Elenco con link ad altri siti -->
+                        <h2 class="icon-title">Affiliati</h2>
+                        <ul>
+                            <li><a href="http://www.legaseriea.it/">Lega Serie A</a></li>
+                            <li><a href="http://www.risultati.it/">Risultati Live</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Seconda barra laterale (destra) -->
+            <div id="sidebar2">
+                <h2 id="contattaci" class="icon-title">Contattaci</h2>
+                <!-- Elenco con i vari contatti -->
+                <ul>
+                    <li>
+                        <strong>Email:</strong> FootballShop@gmail.com
+                    </li>
+                    <li>
+                        <strong>Telefono:</strong> 0708636034
+                    </li>                    
+                </ul>
+            </div>
+            <!-- Colonna centrale -->
+            <div id="content">               
+                <h1 id="titolo">FootballShop - Area Clienti</h1>
+                <!-- Inizio tabella -->
+                <table> 
+                    <!-- Intestazione tabella -->
+                    <tr>
+                        <th>Nome</th>
+                        <th>Foto</th>
+                        <th>Disponibili</th>
+                        <th>Prezzo</th>
+                        <th>Compra</th>
+                    </tr>
+                    <!-- Primo oggetto -->
+                    <tr class="dispari">
+                    <td>Maglia Juventus</td>
+                        <td>
+                            <img src="images/juve.png" title="Maglia Juventus" 
+                                 alt="Foto maglia Juve" width="100" height="100">
+                        </td>
+                        <td>30</td>
+                        <td>45.00 €</td>
+                        <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
+                    </tr>
+                    <!-- Secondo oggetto -->
+                    <tr class="pari"> 
+                        <td>Maglia Roma</td>
+                        <td>
+                            <img src="images/roma.png" title="Maglia Roma" 
+                                 alt="Foto maglia Roma" width="100" height="100">
+                        </td>
+                        <td>52</td>
+                        <td>45.00 €</td>
+                        <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
+                    </tr>
+                    <!-- Terzo oggetto -->
+                    <tr class="dispari">
+                        <td>Maglia Inter</td>
+                        <td> 
+                            <img src="images/inter.png" title="Maglia Inter" 
+                                 alt="Foto maglia Inter" width="100" height="100">
+                        </td>
+                        <td>48</td>
+                        <td>45.00 €</td>
+                        <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td>
+                    </tr>
+                    <!-- Quarto oggetto -->
+                    <tr class="pari">
+                        <td>Maglia Milan (Trasferta)</td>
+                        <td>
+                            <img src="images/milan2.png" title="Maglia Milan Trasferta" 
+                                 alt="Foto maglia Milan trasferta" width="100" height="100">
+                        </td>
+                        <td>78</td>
+                        <td>40.00 €</td>
+                        <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
+                    </tr>
+                    <!-- Quinto oggetto -->
+                    <tr class="dispari">
+                        <td>Pallone Napoli</td>
+                        <td>
+                            <img src="images/napoli_pallone.png" title="Pallone Napoli" 
+                                 alt="Foto pallone Napoli" width="100" height="100">
+                        </td>
+                        <td>90</td>
+                        <td>10.50 €</td>
+                        <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
+                    </tr>
+                    <!-- Sesto oggetto -->
+                    <tr class="pari">
+                        <td>Cover Fiorentina</td>
+                        <td>
+                            <img src="images/fiorentina_cover.png" title="Cover Fiorentina" 
+                                 alt="Foto cover Fiorentina" width="100" height="100">
+                        </td>
+                        <td>94</td>
+                        <td>6.00 €</td>
+                        <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- Blocco vuoto ("clear") -->
+            <div style="clear: both; width: 0px; height: 0px;"></div>
+            
+            <footer>
+                <div id="footer">
+                    <!-- Paragrafo del footer -->
+                    <p>
+                        Author: Riccardo Casu
+                    </p>
+                </div>                
+            </footer>
+        </div>
     </body>
 </html>

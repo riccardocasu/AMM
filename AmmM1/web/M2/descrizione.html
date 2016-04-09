@@ -5,56 +5,133 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <!-- Titolo e metainformazioni -->
+    <head>        
         <title>FootballShop</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Compra e vendi divise e gadget della tua squadra preferita di Serie A a prezzi bassissimi!">
         <meta name="author" content="Riccardo Casu">
         <meta name="keywords" content="Football, calcio, compra, ,vendi, maglie, divise, gadget, Serie A"> 
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
         <link href="style.css" rel="stylesheet" type="text/css" media="screen"/>
     </head>
     <body>
-        <!-- Sezione di navigazione che permette di raggiungere la pagina di login -->
-        <nav>
-             <a href="login.html">Login</a>
-        </nav>        
-        <!-- Titolo di livello h1 e sommario -->
-        <h1 id="titolo">FootballShop</h1>        
-        <nav>
-            <ul>
-                <li><a href='#Info'>Chi siamo</a></li>
-                <li><a href="#In_vendita">Prodotti in Vendita</a>
-                    <ul>
-                        <li><a href="#Maglie">Maglie</a></li>
-                        <li><a href="#Gadget">Gadget</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href='#Contattaci'>Contattaci</a>
-                </li>
-            </ul>
-        </nav> 
-        <!-- Titoli di livello h2 e h3 -->
-        <h2 id='Info'>Chi Siamo</h2>
-        <p>
-            Benvenuto su FootballShop! Compra divise e accessori della tua squadra preferita di Serie A a prezzi bassissimi! 
-            E' anche possibile vendere le proprie maglie nell'apposita sezione. Buona navigazione!
-        </p>        
-        <h2 id='In_vendita'>Prodotti in Vendita</h2>
-        <h3 id='Maglie'>Maglie</h3>
-        <p>
-            Sono disponibili le maglie di tutte e 20 le squadre del campionato di Serie A TIM: Juventus, Napoli, Roma, Inter, Fiorentina, Milan,
-            Sassuolo, Lazio, Bologna, Chievo, Empoli, Genoa, Torino, Sampdoria, Atalanta, Udinese, Palermo, Frosinone, Carpi, Verona.
-        </p>
-        <h3 id='Gadget'>Gadget</h3>
-        <p>
-            In questa sezione è possibile comprare fantastici gadget come portachiavi, orologi, cappelli, sciarpe, palloni e tanto altro!
-        </p>        
-        <h2 id='Contattaci'>Contattaci</h2>
-        <p>
-            FootballShop@AMM.com
-        </p>        
+        <div id="page">
+            <header>        
+                <div id="header">                    
+                    <div id="logo">
+                        <!-- Titolo di livello h1 -->
+                        <h1>FootballShop</h1>
+                    </div>                    
+                    <div class="social">
+                        <!-- Elenco di link ai vari social -->
+                        <ul>
+                            <li id="facebook"><a href="https://www.facebook.com">facebook</a></li>
+                            <li id="twitter"><a href="https://twitter.com/">twitter</a></li>
+                            <li id="instagram"><a href="http://www.instagram.com/">instagram</a></li>
+                        </ul>
+                    </div>                    
+                    <div id="menu">
+                        <!-- Elenco con link alle altre pagine -->
+                        <ul>
+                            <li><a href="descrizione.html">Home</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="cliente.html">Cliente</a></li>
+                            <li><a href="venditore.html">Venditore</a></li>
+                        </ul>
+                    </div> 
+                </div>
+            </header>
+            <!-- Prima barra laterale (sinistra) -->
+            <div id="sidebar1">
+                <ul>
+                    <li id="navigazione">
+                        <h2 class="icon-title">Navigazione</h2>
+                        <!-- Elenco con link alle altre pagine -->
+                        <ul>
+                            <li><a href="descrizione.html">Home</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="cliente.html">Cliente</a></li>
+                            <li><a href="venditore.html">Venditore</a></li>
+                        </ul>
+                    </li>
+                    <li id="altri">
+                        <h2 class="icon-title">Affiliati</h2>
+                        <!-- Elenco con link ad altri siti -->
+                        <ul>
+                            <li><a href="http://www.legaseriea.it/">Lega Serie A</a></li>
+                            <li><a href="http://www.risultati.it/">Risultati Live</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Seconda barra laterale (destra) -->
+            <div id="sidebar2">
+                <h2 id="contattaci" class="icon-title">Contattaci</h2>
+                <!-- Elenco con i vari contatti -->
+                <ul>
+                    <li>
+                        <strong>Email:</strong> FootballShop@gmail.com
+                    </li>
+                    <li>
+                        <strong>Telefono:</strong> 0708636034
+                    </li>                    
+                </ul>
+            </div>
+            <!-- Colonna centrale -->
+            <div id="content">
+                <h2 class="icon-title" id="Chi_siamo">Chi Siamo</h2>
+                <p>
+                    Benvenuto su FootballShop! Compra divise e accessori della tua squadra preferita di Serie A a prezzi bassissimi! 
+                    E' anche possibile vendere le proprie maglie nell'apposita sezione. Buona navigazione!
+                </p>                                    
+                <h2 class="icon-title" id='In_vendita'>Prodotti in Vendita</h2>
+                <!-- Sommario -->
+                <ul>
+                    <li><a href="#MaglieGara">Maglie da gara</a></li>
+                    <li><a href="#MaglieAllenamento">Maglie da allenamento</a></li>
+                    <li><a href="#Pantaloncini">Pantaloncini</a></li>
+                    <li><a href="#Scarpe">Scarpe</a></li>
+                    <li><a href="#Palloni">Palloni</a></li>                            
+                    <li><a href="#Gadget">Gadget</a></li>                            
+                </ul> 
+                <h3 id='MaglieGara'>Maglie da gara</h3>
+                <p>
+                    Sono disponibili le maglie da gara (casa e trasferta) di tutte e 20 le squadre del campionato di Serie A TIM: Juventus, Napoli, Roma, Inter, Fiorentina, Milan,
+                    Sassuolo, Lazio, Bologna, Chievo, Empoli, Genoa, Torino, Sampdoria, Atalanta, Udinese, Palermo, Frosinone, Carpi, Verona.
+                </p>                
+                <h3 id='MaglieAllenamento'>Maglie da allenamento</h3>
+                <p>
+                    In questa sezione è possibile comprare maglie da allenamento.
+                </p>                
+                <h3 id='Pantaloncini'>Pantaloncini</h3>
+                <p>
+                    In questa sezione si possono acquistare pantaloncini da gara della tua squadra preferita.
+                </p>                
+                <h3 id='Scarpe'>Scarpe</h3>
+                <p>
+                    Sono disponibili sia scarpe da calcio che scarpe da calcio a 5.
+                </p>
+                <h3 id='Palloni'>Palloni</h3>
+                <p>
+                    Disponibili palloni da calcio e da calcio a 5.
+                </p>                
+                <h3 id='Gadget'>Gadget</h3>
+                <p>
+                    In questa sezione trovi fantastici gadget come portachiavi, orologi, cappelli, sciarpe e tanto altro!
+                </p>                 
+            </div>
+            <!-- Blocco vuoto ("clear") -->
+            <div style="clear: both; width: 0px; height: 0px;"></div>
+            
+            <footer>
+                <div id="footer"> 
+                    <!-- Paragrafo del footer -->
+                    <p>
+                        Author: Riccardo Casu
+                    </p>
+                </div>                
+            </footer>
+        </div>
     </body>
 </html>
