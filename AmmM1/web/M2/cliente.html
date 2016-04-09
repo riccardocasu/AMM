@@ -81,84 +81,87 @@ and open the template in the editor.
             </div>
             <!-- Colonna centrale -->
             <div id="content">               
-                <h1 id="titolo">FootballShop - Area Clienti</h1>
-                <!-- Inizio tabella -->
-                <table> 
-                    <!-- Intestazione tabella -->
-                    <tr>
-                        <th>Nome</th>
-                        <th>Foto</th>
-                        <th>Disponibili</th>
-                        <th>Prezzo</th>
-                        <th>Compra</th>
-                    </tr>
-                    <!-- Primo oggetto -->
-                    <tr class="dispari">
-                    <td>Maglia Juventus</td>
-                        <td>
-                            <img src="images/juve.png" title="Maglia Juventus" 
-                                 alt="Foto maglia Juve" width="100" height="100">
-                        </td>
-                        <td>30</td>
-                        <td>45.00 €</td>
-                        <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
-                    </tr>
-                    <!-- Secondo oggetto -->
-                    <tr class="pari"> 
-                        <td>Maglia Roma</td>
-                        <td>
-                            <img src="images/roma.png" title="Maglia Roma" 
-                                 alt="Foto maglia Roma" width="100" height="100">
-                        </td>
-                        <td>52</td>
-                        <td>45.00 €</td>
-                        <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
-                    </tr>
-                    <!-- Terzo oggetto -->
-                    <tr class="dispari">
-                        <td>Maglia Inter</td>
-                        <td> 
-                            <img src="images/inter.png" title="Maglia Inter" 
-                                 alt="Foto maglia Inter" width="100" height="100">
-                        </td>
-                        <td>48</td>
-                        <td>45.00 €</td>
-                        <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td>
-                    </tr>
-                    <!-- Quarto oggetto -->
-                    <tr class="pari">
-                        <td>Maglia Milan (Trasferta)</td>
-                        <td>
-                            <img src="images/milan2.png" title="Maglia Milan Trasferta" 
-                                 alt="Foto maglia Milan trasferta" width="100" height="100">
-                        </td>
-                        <td>78</td>
-                        <td>40.00 €</td>
-                        <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
-                    </tr>
-                    <!-- Quinto oggetto -->
-                    <tr class="dispari">
-                        <td>Pallone Napoli</td>
-                        <td>
-                            <img src="images/napoli_pallone.png" title="Pallone Napoli" 
-                                 alt="Foto pallone Napoli" width="100" height="100">
-                        </td>
-                        <td>90</td>
-                        <td>10.50 €</td>
-                        <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
-                    </tr>
-                    <!-- Sesto oggetto -->
-                    <tr class="pari">
-                        <td>Cover Fiorentina</td>
-                        <td>
-                            <img src="images/fiorentina_cover.png" title="Cover Fiorentina" 
-                                 alt="Foto cover Fiorentina" width="100" height="100">
-                        </td>
-                        <td>94</td>
-                        <td>6.00 €</td>
-                        <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
-                    </tr>
-                </table>
+                <h1 id="titolo">FootballShop - Area Clienti</h1> 
+                <!-- Box per gestire l'overflow della tabella -->
+                <div id="box_tabella">
+                    <!-- Inizio tabella -->
+                    <table> 
+                        <!-- Intestazione tabella -->
+                        <tr>
+                            <th>Nome</th>
+                            <th>Foto</th>
+                            <th>Disponibili</th>
+                            <th>Prezzo</th>
+                            <th>Compra</th>
+                        </tr>
+                        <!-- Primo oggetto -->
+                        <tr class="dispari">
+                        <td>Maglia Juventus</td>
+                            <td>
+                                <img src="images/juve.png" title="Maglia Juventus" 
+                                     alt="Foto maglia Juve" width="100" height="100">
+                            </td>
+                            <td>30</td>
+                            <td>45.00 €</td>
+                            <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
+                        </tr>
+                        <!-- Secondo oggetto -->
+                        <tr class="pari"> 
+                            <td>Maglia Roma</td>
+                            <td>
+                                <img src="images/roma.png" title="Maglia Roma" 
+                                     alt="Foto maglia Roma" width="100" height="100">
+                            </td>
+                            <td>52</td>
+                            <td>45.00 €</td>
+                            <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
+                        </tr>
+                        <!-- Terzo oggetto -->
+                        <tr class="dispari">
+                            <td>Maglia Inter</td>
+                            <td> 
+                                <img src="images/inter.png" title="Maglia Inter" 
+                                     alt="Foto maglia Inter" width="100" height="100">
+                            </td>
+                            <td>48</td>
+                            <td>45.00 €</td>
+                            <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td>
+                        </tr>
+                        <!-- Quarto oggetto -->
+                        <tr class="pari">
+                            <td>Maglia Milan (Trasferta)</td>
+                            <td>
+                                <img src="images/milan2.png" title="Maglia Milan Trasferta" 
+                                     alt="Foto maglia Milan trasferta" width="100" height="100">
+                            </td>
+                            <td>78</td>
+                            <td>40.00 €</td>
+                            <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
+                        </tr>
+                        <!-- Quinto oggetto -->
+                        <tr class="dispari">
+                            <td>Pallone Napoli</td>
+                            <td>
+                                <img src="images/napoli_pallone.png" title="Pallone Napoli" 
+                                     alt="Foto pallone Napoli" width="100" height="100">
+                            </td>
+                            <td>90</td>
+                            <td>10.50 €</td>
+                            <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
+                        </tr>
+                        <!-- Sesto oggetto -->
+                        <tr class="pari">
+                            <td>Cover Fiorentina</td>
+                            <td>
+                                <img src="images/fiorentina_cover.png" title="Cover Fiorentina" 
+                                     alt="Foto cover Fiorentina" width="100" height="100">
+                            </td>
+                            <td>94</td>
+                            <td>6.00 €</td>
+                            <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
+                        </tr>
+                    </table>
+                </div>
             </div>
             
             <!-- Blocco vuoto ("clear") -->

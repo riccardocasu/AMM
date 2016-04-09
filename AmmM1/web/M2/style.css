@@ -63,6 +63,11 @@ tr.pari{
 tr.dispari{
     background: #F4F4F4;
 }
+/*Gestione dell'overflow delle tabelle*/
+#box_tabella{
+    overflow-x: auto;
+}
+
 /*Colore di sfondo e dimensione minima della pagina*/
 #page {
     background-color: white;
@@ -104,7 +109,6 @@ h1 {
 }
 h2, h3 {
     color: #1c345a;
-    margin: 0px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -373,7 +377,6 @@ input, textarea {
     #sidebar2 {
         float: left;
         clear: both;
-        width: 200px;
         padding-left: 5px;
         padding-right: 10px;
     }
