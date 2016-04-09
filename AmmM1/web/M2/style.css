@@ -71,7 +71,7 @@ tr.dispari{
 /*Colore di sfondo e dimensione minima della pagina*/
 #page {
     background-color: white;
-    min-width: 400px;
+    min-width: 200px;
 }
 /*Stile dell'header e del footer*/
 #header, #footer{
