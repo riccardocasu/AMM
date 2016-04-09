@@ -68,13 +68,13 @@ tr.dispari{
     background-color: white;
     min-width: 400px;
 }
-/*Colori dell'header e del footer*/
+/*Stile dell'header e del footer*/
 #header, #footer{
     background-color: #1c345a;
     color: white;
     border-bottom: 10px solid #9e1616;
 }
-/*Colore degli elenchi di link nel menu*/
+/*Stile degli elenchi di link nel menu*/
 #menu ul li a:link {
     color: white;
 }
@@ -83,15 +83,13 @@ tr.dispari{
 }
 /*Caratteristiche degli elenchi delle barre laterali*/
 #sidebar1 ul, #sidebar2 ul {
-    padding-left: 10px;
-    margin-top: 0px;
-    margin-left: 0px;
+    padding-left: 10px;    
     list-style: none;
 }
 #sidebar1 li, #sidebar2 li {
     list-style: none;
 }
-/*Caratteristiche delle icone che precedono le scritte*/
+/*Caratteristiche di titoli con icona*/
 .icon-title {
     background-repeat: no-repeat;
     vertical-align: middle;
@@ -219,10 +217,10 @@ input, textarea {
 /*Caratteristiche del paragrafo del footer*/
     #footer p {
         position: absolute;
-        margin-top: 10px;
-        text-align: center;
+        margin-top: 10px;        
         margin-left: auto;
         margin-right: auto;
+        padding-left: 10px;
         display: block;
     }
 /*Proprietà del logo*/
@@ -371,7 +369,7 @@ input, textarea {
     #sidebar1 li {
         margin-bottom: 10px;
     }
-/*Proprità della seconda barra laterale (che sposto a sinistra)*/
+/*Proprità della seconda barra laterale (spostata a sinistra)*/
     #sidebar2 {
         float: left;
         clear: both;
