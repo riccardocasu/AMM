@@ -419,8 +419,7 @@ input, textarea {
 /*Proprietà dell'header*/
     #header {
         padding: 3px;    
-        position: relative;       
-        background-color: #1c345a;
+        position: relative;
     }
 /*Proprietà del footer*/
     #footer {
