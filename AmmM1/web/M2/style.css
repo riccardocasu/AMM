@@ -121,7 +121,7 @@ h2 {
 #content h3{
     background: #1c345a;
     color: white;
-    padding-left: 3px;
+    text-align: center;
     }
 /*Allinemento per i campi dei form*/
 label::after, label::before {
