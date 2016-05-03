@@ -1,0 +1,470 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 31-mar-2016, 16.17.40
+    Author     : Riccardo
+*/
+
+/*Colore di sfondo e caratteristiche font*/
+body {
+    background-color: #e4e4e4;
+    font: 13px/20px "Open Sans", Arial, sans-serif;
+    text-align: justify;
+}
+/*Proprietà dei link*/
+a:visited {
+    text-decoration: none;
+    color: #1C345A;
+}
+a:link {
+    text-decoration: none;
+    color: #1C345A;
+}
+a:hover{
+    text-decoration: none;
+    font-weight: bold;
+}
+/*Proprietà delle immagini con link*/
+a:link img{
+    opacity:.50;
+    -moz-opacity:.50;
+    filter: alpha(opacity=50);
+    }
+a:hover img{
+    opacity:.99;
+    -moz-opacity:.99;
+    filter: alpha(opacity=50);
+}
+/*Proprietà delle tabelle*/
+table{
+    border: 2px solid #D6DDE6;
+    border-collapse: collapse;
+    text-align: center;
+}  
+table td{
+    border:2px solid #ffffff;
+    padding: 0.2em;
+    width: 150px;
+}  
+table th{
+    border:2px solid #ffffff;
+    padding: 0.2em;
+    background-color: #0D2956;
+    color: #FFFFFF;
+    font-weight: bold; 
+}
+/*Colori alternati righe pari e dispari*/
+tr.pari{
+    background: #C0C0C0;
+}
+tr.dispari{
+    background: #F4F4F4;
+}
+/*Gestione dell'overflow delle tabelle*/
+#box_tabella{
+    overflow-x: auto;
+}
+
+/*Colore di sfondo e dimensione minima della pagina*/
+#page {
+    background-color: white;
+    min-width: 200px;
+}
+/*Stile dell'header e del footer*/
+#header, #footer{
+    background-color: #1c345a;
+    color: white;
+    border-bottom: 10px solid #9e1616;
+}
+/*Stile degli elenchi di link nel menu*/
+#menu ul li a:link {
+    color: white;
+}
+#menu ul li a:visited {
+    color: white;
+}
+/*Caratteristiche degli elenchi delle barre laterali*/
+#sidebar1 ul, #sidebar2 ul {
+    padding-left: 10px;    
+    list-style: none;
+}
+#sidebar1 li, #sidebar2 li {
+    list-style: none;
+}
+/*Caratteristiche di titoli con icona*/
+.icon-title {
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    padding-top: 3px;
+    margin-top: 15px;
+}
+/*Caratteristiche dei titoli*/
+h1 {
+    display: block;
+    font-size: 2em;    
+    font-weight: bold;
+}
+h2, h3 {
+    color: #1c345a;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+/*Caratteristiche dei titoli di livello h3 di content (colonna centrale)*/
+#content h3{
+    background: #1c345a;
+    color: white;
+    text-align: center;
+    }
+/*Allinemento per i campi dei form*/
+label::after, label::before {
+    content: '\A';
+    white-space: pre;
+}
+/*Proprietà dei form*/
+form {
+    border-style: solid;
+    border-color: #9E1616;
+    border-radius: 8px;  
+}
+.login_form, .venditore_form{
+    margin: auto;
+    width: 60%;
+}
+.pulsante {
+    border: 1px solid #9E1616;;
+    background-color: #1c345a;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+input:focus, textarea:focus{
+    border: 1px solid #9E1616;
+    background-color: #e4e4e4;
+}
+input:not(.pulsante), textarea{
+    width: 100%;
+    border: 1px solid #9E1616;
+    border-radius: 5px;
+}
+input, textarea {
+    margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 1024px){
+/*Proprietà della pagina*/
+    #page {
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
+    }
+/*Proprietà della classe social*/
+    .social {
+        width: 100%;
+    }
+    .social ul {
+        display: block;
+        float: right;
+        margin-right: 10px;
+    }
+    .social ul li {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        overflow: hidden;
+    }
+    .social ul li a:link {
+        color: transparent;
+    }
+    #facebook {
+        background-image: url('images/facebook.png');
+        background-repeat: no-repeat;
+    }
+    #twitter {
+        background-image: url('images/twitter.png');
+        background-repeat: no-repeat;
+    }
+    #instagram {
+        background-image: url('images/instagram.png');
+        background-repeat: no-repeat;
+    }
+/*Proprietà dell'header*/
+    #header{
+        height: 100px;
+        position: relative;
+        width: 1000px;
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
+    } 
+    #header {
+        clear: both;
+    }
+    #header{
+        background-image: url(images/header.png);
+    }
+/*Proprietà del footer*/
+    #footer {
+        height: 35px;
+        position: relative;    
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
+    }
+/*Caratteristiche del paragrafo del footer*/
+    #footer p {
+        position: absolute;
+        margin-top: 10px;        
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 10px;
+        display: block;
+    }
+/*Proprietà del logo*/
+    #logo {
+        position: absolute;
+        padding-left: 10px;
+    }
+    div#logo h1 {
+        background-image: url('images/logo_serieA.png');
+        background-repeat: no-repeat;
+        background-position: center left;
+        height: 100px;
+        vertical-align: middle;
+        padding-left: 100px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        line-height: 100px;
+        color: #ffffff;
+        display: block;
+    }
+/*Proprietà del menù*/
+    #menu {
+        position: relative;
+        float: right;
+        display: inline-block;
+    }    
+    #menu ul li {
+        position: relative;
+        display: inline-block;
+        color: white;
+        list-style: none;
+    }
+/*Proprietà della prima barra laterale (sinistra)*/
+    #sidebar1 {
+        float: left;
+        width: 20%;
+        padding-left: 5px;
+    }    
+/*Proprietà della seconda barra laterale (destra)*/
+    #sidebar2 {
+        float: right;
+        width: 20%;
+    }    
+    #sidebar2 ul {
+        padding-left: 20px;
+    }    
+/*Proprietà della colonna centrale (contenuto)*/
+    #content {
+        margin-left: 20%;
+        margin-right: 23%;
+        padding-bottom: 10px;
+    }
+/*Proprietà dei titoli con icon*/
+    .icon-title {
+        padding-left: 38px;
+    }    
+    #Chi_siamo {
+        background-image: url('images/chiSiamo.png');
+    }
+    #In_vendita {
+        background-image: url('images/inVendita.png');
+    }    
+    #navigazione h2 {
+        background-image: url('images/pallone_serieA.png');
+    }
+    #altri h2 {
+        background-image: url('images/altri.png');
+    }
+    #sidebar2 h2 {
+        background-image: url('images/contattaci.png');
+    }    
+}
+
+@media only screen and (min-width: 480px) and (max-width: 1024px){ 
+/*Nascondo i link ai social*/
+    .social {
+        display: none;
+    }
+/*Proprità dell'header*/
+    #header{        
+        min-height: 50px;
+        position: relative;
+        padding-right: 10px;
+    }
+/*Proprietà del footer*/
+    #footer {
+        height: 35px;
+        position: relative;    
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
+    }
+/*Caratteristiche del paragrafo del footer*/
+    #footer p {
+        position: absolute;
+        margin-top: 10px;        
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 10px;
+        display: block;
+    }
+/*Proprità del logo*/
+    #logo {
+        position: absolute;
+    }
+/*Proprità del titolo/logo*/
+    div#logo h1 {
+        background-repeat: no-repeat;
+        background-position: center left;
+        vertical-align: middle;
+        line-height: 50px;
+        padding-left: 10px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: #ffffff;
+        display: block;
+    }
+/*Proprietà del menù*/
+    #menu {
+        position: relative;
+        float: right;
+        display: inline-block;
+    }
+    #menu ul {
+        position: relative;
+        display: inline-block;
+        list-style: none;
+    }
+    #menu ul li {
+        position: relative;
+        display: inline-block;
+        color: white;
+        margin-left: 20px;
+    }
+/*Proprietà della prima barra laterale*/
+    #sidebar1 {
+        float: left;
+        width: 200px;
+        padding-left: 5px;
+        padding-right: 10px;
+    }
+    #sidebar1 ul {
+        margin: 0px;
+        padding: 0px;
+    }
+    #sidebar1 li {
+        margin-bottom: 10px;
+    }
+/*Proprità della seconda barra laterale (spostata a sinistra)*/
+    #sidebar2 {
+        float: left;
+        clear: both;
+        padding-left: 5px;
+    }
+/*Proprità del contenuto*/
+    #content {
+        margin-left: 200px;
+        padding-bottom: 10px;
+        margin-right: 5px;
+    }
+/*Proprietà dei titoli con icon*/
+    .icon-title {
+        padding-left: 38px;
+    }    
+    #Chi_siamo {
+        background-image: url('images/chiSiamo.png');
+    }
+    #In_vendita {
+        background-image: url('images/inVendita.png');
+    }    
+    #navigazione h2 {
+        background-image: url('images/pallone_serieA.png');
+    }
+    #altri h2 {
+        background-image: url('images/altri.png');
+    }
+    #sidebar2 h2 {
+        background-image: url('images/contattaci.png');
+    }    
+}
+
+@media only screen and (max-width: 480px) {
+/*Nascondo i link ai social*/
+    .social {
+        display: none;
+    }
+/*Nascondo il menu*/
+    #menu {
+        display: none;
+    }
+/*Proprietà dell'header*/
+    #header {
+        padding: 3px;    
+        position: relative;
+    }
+/*Proprietà del footer*/
+    #footer {
+        height: 35px;
+        position: relative;    
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
+    }
+/*Caratteristiche del paragrafo del footer*/
+    #footer p {
+        position: absolute;
+        margin-top: 10px;        
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 10px;
+        display: block;
+    }
+/*Proprietà della sidebar1*/
+    #sidebar1 {
+        padding-bottom: 10px;
+    }
+/*Proprietà della sidebar1*/
+    #sidebar2 {
+        padding-bottom: 10px;
+        margin-left: 10px;
+    }
+/*Proprietà del contenuto*/
+    #content {
+        padding-bottom: 10px;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+/*Proprietà dei titoli con icon*/
+    .icon-title {
+        padding-left: 38px;
+    }    
+    #Chi_siamo {
+        background-image: url('images/chiSiamo.png');
+    }
+    #In_vendita {
+        background-image: url('images/inVendita.png');
+    }    
+    #navigazione h2 {
+        background-image: url('images/pallone_serieA.png');
+    }
+    #altri h2 {
+        background-image: url('images/altri.png');
+    }
+    #sidebar2 h2 {
+        background-image: url('images/contattaci.png');
+    }    
+}
