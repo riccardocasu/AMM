@@ -5,12 +5,11 @@
  */
 package it.footballshop.servlets;
 
-import it.footballshop.classi.Cliente;
 import it.footballshop.classi.Utente;
 import it.footballshop.classi.Factory;
+import it.footballshop.classi.OggettoInVendita;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,10 +19,10 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author casur
+ * @author Riccardo
  */
-@WebServlet(name = "Login", urlPatterns = {"/login.html"})
-public class Login extends HttpServlet {
+@WebServlet(name = "Cliente", urlPatterns = {"/cliente.html"})
+public class Cliente extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,38 +33,41 @@ public class Login extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession(true);
-        session.setAttribute("loggedIn", false);
-        if(request.getParameter("Submit")!=null){
-            String username = request.getParameter("user");
-            String password = request.getParameter("password");
+        HttpSession session = request.getSession(false);
             
-            ArrayList<Utente> listaUtenti = Factory.getInstance().getUserList();
-            
-            for(Utente u : listaUtenti){
-                if(u.getUsername().equals(username) && u.getPassword().equals(password)){
-                    session.setAttribute("loggedIn", true);
-                    session.setAttribute("id", u.getId());
-                    session.setAttribute("nome", u.getNome());
-                    session.setAttribute("cognome", u.getCognome());
-                    
-                    if (u instanceof Cliente){
-                        session.setAttribute("cliente", u);
-                        session.setAttribute("objectSale", Factory.getInstance().getOggettiList());
-                        request.getRequestDispatcher("/cliente.jsp").forward(request, response);
+            if(request.getParameter("idOggetto")!=null){
+            Integer idOggetto = Integer.parseInt(request.getParameter("idOggetto"));
+            request.setAttribute("oggetto", Factory.getInstance().getOggetto(idOggetto));
+            request.getRequestDispatcher("carrello.jsp").forward(request, response);
+            }
+            if(request.getParameter("idoggVenduto")!=null){
+                Integer idCliente = (Integer)session.getAttribute("id");
+                Utente cliente = Factory.getInstance().getCliente(idCliente);
+                OggettoInVendita oggetto = Factory.getInstance().getOggetto(Integer.parseInt(request.getParameter("idoggVenduto")));
+                if( cliente.getSaldo() > oggetto.getPrezzo()){
+                    cliente.setSaldo(cliente.getSaldo() - oggetto.getPrezzo());
+                    if( oggetto.getQuantita() == 0){
+                        request.setAttribute("pagato", "Impossibile procedere con il pagamento: oggetto terminato");
+                        request.setAttribute("oggetto", Factory.getInstance().getOggetto(Integer.parseInt(request.getParameter("idoggVenduto"))));
+                        request.getRequestDispatcher("carrello.jsp").forward(request, response);
                     }
                     else{
-                        session.setAttribute("venditore", u);
-                        request.getRequestDispatcher("/venditore.jsp").forward(request, response);
+                        oggetto.setQuantita(oggetto.getQuantita()-1);
                     }
+                    request.setAttribute("pagato", "Pagamento avvenuto con successo");
+                    request.setAttribute("oggetto", Factory.getInstance().getOggetto(Integer.parseInt(request.getParameter("idoggVenduto"))));
+                    request.getRequestDispatcher("carrello.jsp").forward(request, response);
+                }
+                else{
+                    request.setAttribute("pagato", "Impossibile procedere con il pagamento: credito insufficiente");
+                    request.setAttribute("oggetto", Factory.getInstance().getOggetto(Integer.parseInt(request.getParameter("idoggVenduto"))));
+                    request.getRequestDispatcher("carrello.jsp").forward(request, response);
                 }
             }
-        }
-        request.setAttribute("messaggio", "Dati non corretti");
-        request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

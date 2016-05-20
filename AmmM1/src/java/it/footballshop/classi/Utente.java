@@ -15,7 +15,8 @@ public class Utente {
     private String cognome;
     private String username;
     private String password;
-    protected int id;
+    private int id;
+    private double saldo;
     
     public Utente(){
         this.nome="";
@@ -23,6 +24,7 @@ public class Utente {
         this.username="";
         this.password="";
         this.id=0;
+        this.saldo=0;
     }
 
     /**
@@ -94,7 +96,20 @@ public class Utente {
     public void setId(int id) {
         this.id = id;
     }
-    
+
+    /**
+     * @return the saldo
+     */
+    public double getSaldo() {
+        return saldo;
+    }
+
+    /**
+     * @param saldo the saldo to set
+     */
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
     
     
 }

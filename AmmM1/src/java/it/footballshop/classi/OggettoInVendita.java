@@ -13,18 +13,20 @@ public class OggettoInVendita {
     private String nome;
     private String urlImmagine;
     private double prezzo;
-    private int pezziDisponibili;
+    private int quantita;
     private String descrizione;
-    int id;
+    private int id;
     
     public OggettoInVendita()
     {
         this.nome="";
         this.urlImmagine="";
         this.prezzo=0.0;
-        this.pezziDisponibili=0;
+        this.quantita=0;
+        this.descrizione="";
         this.id=0;
     }
+
     /**
      * @return the nome
      */
@@ -68,17 +70,17 @@ public class OggettoInVendita {
     }
 
     /**
-     * @return the pezziDisponibili
+     * @return the quantita
      */
-    public int getPezziDisponibili() {
-        return pezziDisponibili;
+    public int getQuantita() {
+        return quantita;
     }
 
     /**
-     * @param pezziDisponibili the pezziDisponibili to set
+     * @param quantita the quantita to set
      */
-    public void setPezziDisponibili(int pezziDisponibili) {
-        this.pezziDisponibili = pezziDisponibili;
+    public void setQuantita(int quantita) {
+        this.quantita = quantita;
     }
 
     /**
@@ -107,5 +109,7 @@ public class OggettoInVendita {
      */
     public void setId(int id) {
         this.id = id;
-    }    
+    }
+    
+    
 }

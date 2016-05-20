@@ -5,12 +5,8 @@
  */
 package it.footballshop.servlets;
 
-import it.footballshop.classi.Cliente;
-import it.footballshop.classi.Utente;
-import it.footballshop.classi.Factory;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,10 +16,10 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author casur
+ * @author Riccardo
  */
-@WebServlet(name = "Login", urlPatterns = {"/login.html"})
-public class Login extends HttpServlet {
+@WebServlet(name = "Logout", urlPatterns = {"/Logout"})
+public class Logout extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,35 +33,9 @@ public class Login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession(true);
-        session.setAttribute("loggedIn", false);
-        if(request.getParameter("Submit")!=null){
-            String username = request.getParameter("user");
-            String password = request.getParameter("password");
-            
-            ArrayList<Utente> listaUtenti = Factory.getInstance().getUserList();
-            
-            for(Utente u : listaUtenti){
-                if(u.getUsername().equals(username) && u.getPassword().equals(password)){
-                    session.setAttribute("loggedIn", true);
-                    session.setAttribute("id", u.getId());
-                    session.setAttribute("nome", u.getNome());
-                    session.setAttribute("cognome", u.getCognome());
-                    
-                    if (u instanceof Cliente){
-                        session.setAttribute("cliente", u);
-                        session.setAttribute("objectSale", Factory.getInstance().getOggettiList());
-                        request.getRequestDispatcher("/cliente.jsp").forward(request, response);
-                    }
-                    else{
-                        session.setAttribute("venditore", u);
-                        request.getRequestDispatcher("/venditore.jsp").forward(request, response);
-                    }
-                }
-            }
-        }
-        request.setAttribute("messaggio", "Dati non corretti");
-        request.getRequestDispatcher("/login.jsp").forward(request, response);
+        HttpSession session = request.getSession(false);
+        session.invalidate();
+        request.getRequestDispatcher("descrizione.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -20,10 +20,14 @@
         <link href="style.css" rel="stylesheet" type="text/css" media="screen"/>
     </head>
     <body>
+        <c:choose>
+        <c:when test="${loggedIn == true && cliente.getId()==id}">
+                
         <div id="page">
             <jsp:include page="header.jsp"/>
             <jsp:include page="sidebar1.jsp"/>
             <jsp:include page="sidebar2.jsp"/>
+            
             <!-- Colonna centrale -->
             <div id="content">               
                 <h1 id="titolo">FootballShop - Area Clienti</h1> 
@@ -40,7 +44,7 @@
                             <th>Compra</th>
                         </tr>
                         
-                        <c:forEach var="oggetto" items="${listaOggettiInVendita}">                              
+                        <c:forEach var="oggetto" items="${objectSale}">                              
                         <c:choose>
                             <c:when test="${oggetto.getId()%2==0}">
                                 <tr class="pari">
@@ -55,19 +59,25 @@
                                         <img src="${oggetto.getUrlImmagine()}" title="${oggetto.getNome()}" 
                                                  alt="${oggetto.getNome()}" width="100" height="100">
                                     </td>
-                                    <td>${oggetto.getPezziDisponibili()}</td>
+                                    <td>${oggetto.getQuantita()}</td>
                                     <td>${oggetto.getPrezzo()}</td>
-                                    <td><a href="cliente.html"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
+                                    <td><a href="cliente.html?idOggetto=${oggetto.getId()}"><img src="images/carrello.png" width="50" height="50" title="Aggiungi al carrello" alt="Aggiungi oggetto al carrello"></a></td> 
                                 </tr>
                         </c:forEach>                        
                     </table>
                 </div>
-            </div>
+            </div>                    
             
             <!-- Blocco vuoto ("clear") -->
             <div style="clear: both; width: 0px; height: 0px;"></div>
             
             <jsp:include page="footer.jsp"/>
         </div>
+        
+        </c:when>
+        <c:otherwise>
+            <jsp:include page="accesso_negato.jsp"/>
+        </c:otherwise>            
+        </c:choose>  
     </body>
 </html>

@@ -27,15 +27,16 @@
             <div id="content">
                 <h1>FootballShop - Login</h1>
                 <!-- Form per il login -->
-                <form method="get">
+                <form method="post" action="login.html">
                     <div class="login_form">
                         <label for="user">Username</label>
                         <input type="text" name="user" id="user"/>
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password"/>            
                         <div class="Box_pulsanti">
-                            <input class="pulsante" type="submit" value="Accedi"/> 
-                            <input class="pulsante" type='reset' value='Reset'/>
+                            <p>${messaggio}</p>
+                            <input class="pulsante" type="submit" name="Submit" value="Accedi">
+                            <input class="pulsante" type='reset' name="Reset" value='Reset'/>
                         </div>
                     </div>
                 </form>                
