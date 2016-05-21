@@ -13,6 +13,8 @@ import java.util.ArrayList;
  */
 public class Factory {
     private static Factory singleton;
+    String connectionString;
+    
     public static Factory getInstance(){
         if (singleton == null){
             singleton = new Factory();
@@ -164,6 +166,14 @@ public class Factory {
         listaUtenti.addAll(listaClienti);
         
         return listaUtenti;
+    }
+    
+    // ConnectionString
+    public void setConnectionString(String s){
+	this.connectionString = s;
+    }
+    public String getConnectionString(){
+	return this.connectionString;
     }
     
 }
