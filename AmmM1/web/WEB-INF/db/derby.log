@@ -46,3 +46,5 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=C:\Users\casur\Documents\NetBeansProjects\AMM\AmmM1\web\WEB-INF\db
 Programma di caricamento classe database avviato - derby.database.classpath=''
+----------------------------------------------------------------
+Fri May 20 16:48:35 CEST 2016: arresto in corso del motore di Derby
