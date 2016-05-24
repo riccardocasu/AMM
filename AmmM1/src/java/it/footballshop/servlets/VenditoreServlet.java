@@ -8,6 +8,7 @@ package it.footballshop.servlets;
 import it.footballshop.classi.Utente;
 import it.footballshop.classi.UtentiFactory;
 import it.footballshop.classi.OggettoInVendita;
+import it.footballshop.classi.Venditore;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ import javax.servlet.http.HttpSession;
  * @author Riccardo
  */
 @WebServlet(name = "Venditore", urlPatterns = {"/venditore.html"})
-public class Venditore extends HttpServlet {
+public class VenditoreServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,25 +39,50 @@ public class Venditore extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession(false);
+        
+        Integer idOggetto=0;
         if(request.getParameter("Submit")!=null){
-            String nomeoggetto = request.getParameter("nomeoggetto");
-            String img_url = request.getParameter("img_url");
+            
+            String nome = request.getParameter("nome");
+            String UrlImmagine = request.getParameter("UrlImmagine");
             String descrizione = request.getParameter("descrizione");
-            Integer prezzo = Integer.parseInt(request.getParameter("prezzo"));
+            Double prezzo = Double.parseDouble(request.getParameter("prezzo"));
             Integer quantita = Integer.parseInt(request.getParameter("quantita"));
             
-            Integer n=UtentiFactory.getInstance().getOggettiInVendita().size();
-            Integer id = n;
+            Venditore v = new Venditore();
+            v= (Venditore)session.getAttribute("venditore");
+            Integer idVenditore = v.getId();
             OggettoInVendita oggetto_n = new OggettoInVendita();
-            oggetto_n.setNome(nomeoggetto);
-            oggetto_n.setUrlImmagine(img_url);
+            UtentiFactory.getInstance().inserisciOggetto(nome, UrlImmagine, prezzo, quantita, descrizione, idVenditore);
+            oggetto_n.setNome(nome);
             oggetto_n.setDescrizione(descrizione);
+            oggetto_n.setUrlImmagine(UrlImmagine);
             oggetto_n.setPrezzo(prezzo);
             oggetto_n.setQuantita(quantita);
-            oggetto_n.setId(id);
             request.setAttribute("oggetto", oggetto_n);
-            request.getRequestDispatcher("inserimento_confermato.jsp").forward(request, response);          
-        }        
+            request.getRequestDispatcher("inserimento_confermato.jsp").forward(request, response);
+            
+           
+        }
+        if(request.getParameter("idOggettodaEliminare")!=null){
+            UtentiFactory.getInstance().eliminaOggetto(Integer.parseInt(request.getParameter("idOggetto")));
+        }
+        if(request.getParameter("idOggettodaModificare")!=null){
+                idOggetto = Integer.parseInt(request.getParameter("idOggettodaModificare"));
+                
+                request.getRequestDispatcher("modificaoggetto.jsp").forward(request, response);
+        }
+        if(request.getParameter("Modifica")!=null){
+            String nome = request.getParameter("nome");
+            String UrlImmagine = request.getParameter("UrlImmagine");
+            String descrizione = request.getParameter("descrizione");
+            Double prezzo = Double.parseDouble(request.getParameter("prezzo"));
+            Integer quantita = Integer.parseInt(request.getParameter("quantita"));
+            UtentiFactory.getInstance().modificaOggetto(idOggetto, nome, UrlImmagine, descrizione, prezzo, quantita);
+            
+            request.getRequestDispatcher("controller.jsp").forward(request, response);
+        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
