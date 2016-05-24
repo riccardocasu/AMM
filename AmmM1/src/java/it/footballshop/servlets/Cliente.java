@@ -6,7 +6,7 @@
 package it.footballshop.servlets;
 
 import it.footballshop.classi.Utente;
-import it.footballshop.classi.Factory;
+import it.footballshop.classi.UtentiFactory;
 import it.footballshop.classi.OggettoInVendita;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -41,30 +41,30 @@ public class Cliente extends HttpServlet {
             
             if(request.getParameter("idOggetto")!=null){
             Integer idOggetto = Integer.parseInt(request.getParameter("idOggetto"));
-            request.setAttribute("oggetto", Factory.getInstance().getOggetto(idOggetto));
+            request.setAttribute("oggetto", UtentiFactory.getInstance().getOggetto(idOggetto));
             request.getRequestDispatcher("carrello.jsp").forward(request, response);
             }
             if(request.getParameter("idoggVenduto")!=null){
                 Integer idCliente = (Integer)session.getAttribute("id");
-                Utente cliente = Factory.getInstance().getCliente(idCliente);
-                OggettoInVendita oggetto = Factory.getInstance().getOggetto(Integer.parseInt(request.getParameter("idoggVenduto")));
+                Utente cliente = UtentiFactory.getInstance().getCliente(idCliente);
+                OggettoInVendita oggetto = UtentiFactory.getInstance().getOggetto(Integer.parseInt(request.getParameter("idoggVenduto")));
                 if( cliente.getSaldo() > oggetto.getPrezzo()){
                     cliente.setSaldo(cliente.getSaldo() - oggetto.getPrezzo());
                     if( oggetto.getQuantita() == 0){
                         request.setAttribute("pagato", "Impossibile procedere con il pagamento: oggetto terminato");
-                        request.setAttribute("oggetto", Factory.getInstance().getOggetto(Integer.parseInt(request.getParameter("idoggVenduto"))));
+                        request.setAttribute("oggetto", UtentiFactory.getInstance().getOggetto(Integer.parseInt(request.getParameter("idoggVenduto"))));
                         request.getRequestDispatcher("carrello.jsp").forward(request, response);
                     }
                     else{
                         oggetto.setQuantita(oggetto.getQuantita()-1);
                     }
                     request.setAttribute("pagato", "Pagamento avvenuto con successo");
-                    request.setAttribute("oggetto", Factory.getInstance().getOggetto(Integer.parseInt(request.getParameter("idoggVenduto"))));
+                    request.setAttribute("oggetto", UtentiFactory.getInstance().getOggetto(Integer.parseInt(request.getParameter("idoggVenduto"))));
                     request.getRequestDispatcher("carrello.jsp").forward(request, response);
                 }
                 else{
                     request.setAttribute("pagato", "Impossibile procedere con il pagamento: credito insufficiente");
-                    request.setAttribute("oggetto", Factory.getInstance().getOggetto(Integer.parseInt(request.getParameter("idoggVenduto"))));
+                    request.setAttribute("oggetto", UtentiFactory.getInstance().getOggetto(Integer.parseInt(request.getParameter("idoggVenduto"))));
                     request.getRequestDispatcher("carrello.jsp").forward(request, response);
                 }
             }

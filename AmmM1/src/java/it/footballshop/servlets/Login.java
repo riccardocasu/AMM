@@ -7,7 +7,7 @@ package it.footballshop.servlets;
 
 import it.footballshop.classi.Cliente;
 import it.footballshop.classi.Utente;
-import it.footballshop.classi.Factory;
+import it.footballshop.classi.UtentiFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ public class Login extends HttpServlet {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        Factory.getInstance().setConnectionString(dbConnection);
+        UtentiFactory.getInstance().setConnectionString(dbConnection);
     }
 
     /**
@@ -58,26 +58,24 @@ public class Login extends HttpServlet {
             String username = request.getParameter("user");
             String password = request.getParameter("password");
             
-            ArrayList<Utente> listaUtenti = Factory.getInstance().getUserList();
+            Utente u = UtentiFactory.getInstance().getUtente(username, password);
             
-            for(Utente u : listaUtenti){
-                if(u.getUsername().equals(username) && u.getPassword().equals(password)){
-                    session.setAttribute("loggedIn", true);
-                    session.setAttribute("id", u.getId());
-                    session.setAttribute("nome", u.getNome());
-                    session.setAttribute("cognome", u.getCognome());
+            if(u!=null){
+                session.setAttribute("loggedIn", true);
+                session.setAttribute("id", u.getId());
+                session.setAttribute("nome", u.getNome());
+                session.setAttribute("cognome", u.getCognome());
                     
                     if (u instanceof Cliente){
                         session.setAttribute("cliente", u);
-                        session.setAttribute("objectSale", Factory.getInstance().getOggettiList());
+                        session.setAttribute("objectSale", UtentiFactory.getInstance().getOggettiInVendita());
                         request.getRequestDispatcher("/cliente.jsp").forward(request, response);
                     }
                     else{
                         session.setAttribute("venditore", u);
                         request.getRequestDispatcher("/venditore.jsp").forward(request, response);
                     }
-                }
-            }
+                }            
         }
         request.setAttribute("messaggio", "Dati non corretti");
         request.getRequestDispatcher("/login.jsp").forward(request, response);

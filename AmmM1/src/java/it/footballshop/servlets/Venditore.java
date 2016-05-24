@@ -6,7 +6,7 @@
 package it.footballshop.servlets;
 
 import it.footballshop.classi.Utente;
-import it.footballshop.classi.Factory;
+import it.footballshop.classi.UtentiFactory;
 import it.footballshop.classi.OggettoInVendita;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -45,7 +45,7 @@ public class Venditore extends HttpServlet {
             Integer prezzo = Integer.parseInt(request.getParameter("prezzo"));
             Integer quantita = Integer.parseInt(request.getParameter("quantita"));
             
-            Integer n=Factory.getInstance().getOggettiList().size();
+            Integer n=UtentiFactory.getInstance().getOggettiInVendita().size();
             Integer id = n;
             OggettoInVendita oggetto_n = new OggettoInVendita();
             oggetto_n.setNome(nomeoggetto);

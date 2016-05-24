@@ -1,12 +1,29 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- * Author:  casur
- * Created: 21-mag-2016
- */
+CLIENTE
+*id
+Nome
+Cognome
+Username
+Password
+Saldo
+
+VENDITORE
+*id
+Nome
+Cognome
+Username
+Password
+Saldo
+
+OGGETTO
+*Id
+Nome
+URLimmagine
+Prezzo
+Quantita
+Descrizione
+idVenditore
+
+RELAZIONE UNO A MOLTI TRA VENDITORE (UNO) E OGGETTO (MOLTI)
 
 
 CREATE TABLE cliente
@@ -37,8 +54,7 @@ CREATE TABLE oggetto
     prezzo REAL,
     quantita INTEGER,
     descrizione VARCHAR(256),
-    id_venditore INTEGER,
-    FOREIGN KEY (id_venditore) REFERENCES venditore(id)
+    id_venditore INTEGER
 );
 
 INSERT INTO cliente(id, nome, cognome, username, password, saldo)
@@ -52,14 +68,11 @@ VALUES (default, 'Alessandro', 'Carcangiu', 'CarcangiuAlessandro', '0', 40.0),
 (default, 'Giulio', 'Liguori', 'Briscola', '2', 1.0);
 
 INSERT INTO oggetto(id, nome, url_immagine, prezzo, quantita, descrizione, id_venditore)
-VALUES (default, 'Maglia Juventus', 'images/juve.png', 45.00, 30, 'Maglia Juventus', 1),
-(default, 'Maglia Roma', 'images/roma.png', 45.00, 52, 'Maglia Roma', 1),
-(default, 'Maglia Inter', 'images/inter.png', 45.00, 48, 'Maglia Inter', 2),
-(default, 'Maglia Milan (Trasferta)', 'images/milan2.png', 40.00, 78, 'Maglia Milan (Trasferta)', 2),
-(default, 'Pallone Napoli', 'images/napoli_pallone.png', 10.50, 90, 'Pallone Napoli', 3),
-(default, 'Cover Fiorentina', 'images/fiorentina_cover.png', 6.0, 94, 'Cover Fiorentina', 3);
-
-
-
+VALUES (default, 'Maglia Juventus', 'images/juve.png', '45.00', '30', 'Maglia Juventus', 1),
+(default, 'Maglia Roma', 'images/roma.png', '45.00', '52', 'Maglia Roma', 1),
+(default, 'Maglia Inter', 'images/inter.png', '45.00', '48', 'Maglia Inter', 2),
+(default, 'Maglia Milan (Trasferta)', 'images/milan2.png', '40.00', '78', 'Maglia Milan (Trasferta)', 2),
+(default, 'Pallone Napoli', 'images/napoli_pallone.png', '10.50', '90', 'Pallone Napoli', 3),
+(default, 'Cover Fiorentina', 'images/fiorentina_cover.png', '6.0', '94', 'Cover Fiorentina', 3));
 
 

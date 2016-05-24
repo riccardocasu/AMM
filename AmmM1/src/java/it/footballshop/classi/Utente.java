@@ -11,12 +11,12 @@ package it.footballshop.classi;
  */
 public class Utente {
     
-    private String nome;
-    private String cognome;
-    private String username;
-    private String password;
-    private int id;
-    private double saldo;
+    String nome;
+    String cognome;
+    String username;
+    String password;
+    int id;
+    double saldo;
     
     public Utente(){
         this.nome="";

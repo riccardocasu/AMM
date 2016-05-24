@@ -5,14 +5,33 @@
  */
 package it.footballshop.classi;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author casur
  */
 public class Venditore extends Utente{
+    
+    private ArrayList<OggettoInVendita> OggettiInVendita = new ArrayList<OggettoInVendita>(); 
+    
     /* Costruttore */    
     public Venditore()
     {
         super();
+    }
+
+    /**
+     * @return the OggettiInVendita
+     */
+    public ArrayList<OggettoInVendita> getOggettiInVendita() {
+        return OggettiInVendita;
+    }
+
+    /**
+     * @param OggettiInVendita the OggettiInVendita to set
+     */
+    public void setOggettiInVendita(ArrayList<OggettoInVendita> OggettiInVendita) {
+        this.OggettiInVendita = OggettiInVendita;
     }
 }
